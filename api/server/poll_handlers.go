@@ -2,14 +2,14 @@ package server
 
 import (
 	"context"
-	"das/internal/entities"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"polls/internal/entities"
 	"strconv"
 )
 
-type createPayload struct{
-	Title		string `json:"title" binding:"required"`
+type createPayload struct {
+	Title       string `json:"title" binding:"required"`
 	Description string `json:"description" binding:"required"`
 }
 

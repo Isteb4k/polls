@@ -2,8 +2,8 @@ package db
 
 import (
 	"context"
-	"das/internal/entities"
 	"database/sql"
+	"polls/internal/entities"
 )
 
 type polls struct {

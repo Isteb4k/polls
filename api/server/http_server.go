@@ -1,8 +1,8 @@
 package server
 
 import (
-	"das/internal/db"
 	"github.com/gin-gonic/gin"
+	"polls/internal/db"
 )
 
 type Server interface {

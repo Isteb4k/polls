@@ -1,8 +1,8 @@
 package main
 
 import (
-	"das/api/server"
-	"das/internal/db"
+	"polls/api/server"
+	"polls/internal/db"
 )
 
 func main() {

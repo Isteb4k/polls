@@ -1,0 +1,22 @@
+version: "3"
+
+networks:
+  auth_auth_net:
+    external: true
+  polls_polls_net:
+    external: true
+
+services:
+  gateway:
+    image: nginx:latest
+    restart: on-failure
+    networks:
+      - auth_auth_net
+      - polls_polls_net
+    ports:
+      - "81:81"
+    volumes:
+      - ./config/nginx:/etc/nginx
+      - ./logs/nginx:/var/log/nginx
+      - ./placeholder/index.html:/var/www/placeholder/index.html
+

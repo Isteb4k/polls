@@ -22,7 +22,6 @@ func New(polls db.Polls) Server {
 		polls:  polls,
 	}
 
-	router.GET("/status", s.statusHandler)
 	router.POST("/create_poll", s.createPollHandler)
 	router.DELETE("/delete_poll/:id", s.deletePollHandler)
 	router.GET("/get_poll/:id", s.getPollHandler)

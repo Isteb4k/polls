@@ -59,9 +59,3 @@ func (s *server) getPollHandler(c *gin.Context) {
 
 	c.JSON(http.StatusOK, poll)
 }
-
-func (s *server) statusHandler(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"Status": "ok",
-	})
-}

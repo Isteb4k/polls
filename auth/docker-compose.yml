@@ -1,0 +1,29 @@
+version: "3"
+
+networks:
+  auth_net:
+    driver: bridge
+
+services:
+  auth_server:
+    container_name: auth_server
+    networks:
+      - auth_net
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      - pq_db
+  pq_db:
+    restart: always
+    networks:
+      - auth_net
+    image: postgres:latest
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=******
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5437:5432"
